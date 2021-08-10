@@ -11,9 +11,4 @@ controller = ai2thor.controller.Controller(local_executable_path = '/home/ruinia
                                            renderInstanceSegmentation=True,
                                            # camera properties
                                            width=640,
-                                           height=480,)
-
-while 1:
-    print(controller.last_event.metadata['agent']['projectionMatrix'])
-    continue
-    
+                                           height=480)
