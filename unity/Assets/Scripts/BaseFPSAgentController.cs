@@ -1727,6 +1727,29 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             agentMeta.cameraHorizon = cameraX > 180 ? cameraX - 360 : cameraX;
             agentMeta.inHighFrictionArea = inHighFrictionArea;
 
+            // Midified
+            float[][] matrix = new float[4][];
+            for (int i = 0; i < 4; i++) {
+               matrix[i] = new float[4];
+               for (int j = 0; j < 4; j++) {
+                   matrix[i][j] = m_Camera.projectionMatrix[i, j];
+               }
+            }
+
+            agentMeta.projectionMatrix = matrix;
+
+            float[][] matrix_inverse = new float[4][];
+            for (int i = 0; i < 4; i++) {
+               matrix_inverse[i] = new float[4];
+               for (int j = 0; j < 4; j++) {
+                   matrix_inverse[i][j] = m_Camera.projectionMatrix.inverse[i, j];
+               }
+            }
+
+            agentMeta.projectionMatrix_inverse = matrix_inverse;
+            //agentMeta.projectionMatrix = m_Camera.projectionMatrix;
+            //agentMeta.projectionMatrix_inverse = m_Camera.projectionMatrix.inverse;
+
             // OTHER METADATA
             MetadataWrapper metaMessage = new MetadataWrapper();
             metaMessage.agent = agentMeta;

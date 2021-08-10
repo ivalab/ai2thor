@@ -1319,6 +1319,13 @@ public class AgentMetadata {
     public Vector3 rotation;
     public float cameraHorizon;
 
+    // modified
+    public float[][] projectionMatrix;
+    public float[][] projectionMatrix_inverse;
+    //public Matrix4x4 projectionMatrix;
+    //public Matrix4x4 projectionMatrix_inverse;
+    
+
     // TODO: this should be removed from base.
     // some agents cannot stand (e.g., drone, locobot)
     public bool? isStanding = null;
