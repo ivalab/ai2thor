@@ -1735,6 +1735,9 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             agentMeta.inHighFrictionArea = inHighFrictionArea;
 
             // Midified
+            agentMeta.cameraPosition = m_Camera.transform.position;
+            agentMeta.cameraEuler = m_Camera.transform.eulerAngles;
+
             float[][] matrix = new float[4][];
             for (int i = 0; i < 4; i++) {
                matrix[i] = new float[4];
